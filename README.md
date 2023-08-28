@@ -1,6 +1,6 @@
 # Bubble Game
 
-![Game Screenshot](screenshot.png) <!-- Add a screenshot of your game if you have one -->
+![Game Screenshot]   <!-- Add a screenshot of your game if you have one -->
 
 A simple web-based bubble popping game built using HTML, CSS, and JavaScript.
 
