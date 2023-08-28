@@ -1,7 +1,6 @@
 # Bubble Game
 
-[Game Screenshot]![Screenshot 2023-08-28 135726](https://github.com/Kapileswar-Moharana/Bubble-Game/assets/129049677/5e5033ca-3596-4200-a7e1-d556525dc2fc)
- <!-- Add a screenshot of your game if you have one -->
+![Game Screenshot](screenshot.png) <!-- Add a screenshot of your game if you have one -->
 
 A simple web-based bubble popping game built using HTML, CSS, and JavaScript.
 
