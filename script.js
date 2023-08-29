@@ -1,42 +1,49 @@
-var timer=60;
-var score=0;
-var hitrn=0;
-function increaseScore(){
-    score+=10;
-    document.querySelector("#scoreval").textContent=score;
+var timer = 60;
+var score = 0;
+var hitrn = 0;
+
+function increaseScore() {
+    score += 10;
+    document.querySelector("#scoreval").textContent = score;
 }
-function getNewHit(){
-    hitrn=Math.floor(Math.random()*10);
-    document.querySelector("#hitval").textContent=hitrn;
+
+function getNewHit() {
+    hitrn = Math.floor(Math.random() * 10);
+    document.querySelector("#hitval").textContent = hitrn;
 }
-function makebubble(){
-    var clutter="";
-for(var i=1;i<=198;i++){
-    var rn=Math.floor(Math.random()*10)
-    clutter+=`<div class="bubble">${rn}</div>`;
+
+function makebubble() {
+    var bubbleCount = window.innerWidth < 768 ? 50 : 198; // Adjust the number of bubbles based on screen width
+    var clutter = "";
+    for (var i = 1; i <= bubbleCount; i++) {
+        var rn = Math.floor(Math.random() * 10);
+        clutter += `<div class="bubble">${rn}</div>`;
+    }
+    document.querySelector("#pbtm").innerHTML = clutter;
 }
-document.querySelector("#pbtm").innerHTML=clutter;
-}
-function runTimer(){
-    var timerint=setInterval(function(){
-        if(timer>0){
+
+function runTimer() {
+    var timerint = setInterval(function () {
+        if (timer > 0) {
             timer--;
-            document.querySelector("#timerval").textContent=timer;
-        }else{
+            document.querySelector("#timerval").textContent = timer;
+        } else {
             clearInterval(timerint);
-            document.querySelector("#pbtm").innerHTML=`<h1>GAME OVER</h1>`;
+            document.querySelector("#pbtm").innerHTML = `<h1>GAME OVER</h1>`;
         }
-        
-    },1000);
+
+    }, 1000);
 }
-document.querySelector("#pbtm").addEventListener("click",function(details){
-var clickednum=Number(details.target.textContent);
-if(clickednum==hitrn){
-    increaseScore();
-    makebubble();
-    getNewHit();
-}
+
+document.querySelector("#pbtm").addEventListener("click", function (details) {
+    var clickednum = Number(details.target.textContent);
+    if (clickednum == hitrn) {
+        increaseScore();
+        makebubble();
+        getNewHit();
+    }
 });
+
 runTimer();
 makebubble();
 getNewHit();
